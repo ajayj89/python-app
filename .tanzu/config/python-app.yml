@@ -1,0 +1,14 @@
+apiVersion: apps.tanzu.vmware.com/v1
+kind: ContainerApp
+metadata:
+  name: python-app
+spec:
+  build:
+    buildpacks: {}
+    nonSecretEnv:
+    - name: BPE_PORT
+      value: "8080"
+    path: ../..
+  ports:
+  - name: main
+    port: 8080
